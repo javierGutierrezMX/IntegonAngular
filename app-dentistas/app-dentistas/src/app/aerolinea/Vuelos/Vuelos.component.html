@@ -1,0 +1,40 @@
+<div>
+  <div style="border: 5px solid;">
+    <form action="" method="post">
+      <div>
+        <label>Fecha: <input type="date" [(ngModel)]="fechaVuelo" [ngModelOptions]="{standalone: true}"></label>
+      </div>
+      <div>
+        <label>Horario: <input type="time" [(ngModel)]="horarioVuelo" [ngModelOptions]="{standalone: true}"></label>
+      </div>
+      <div>
+        <label>Origen: <input type="text" [(ngModel)]="origenVuelo" [ngModelOptions]="{standalone: true}"></label>
+      </div>
+      <div>
+        <label>Destino: <input type="text" [(ngModel)]="destinoVuelo" [ngModelOptions]="{standalone: true}"></label>
+      </div>
+      <div>
+       <input type="button" value="Regsitrar vuelo" (click)="AddVuelo()">
+      </div>
+    </form>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <th>Index</th>
+        <th>No. de vuelo</th>
+        <th>Fecha</th>
+        <th>Horario</th>
+        <th>Destino</th>
+        <th>Origen</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vuelo of vuelos, index as myIndex; trackBy: trackByVuelo">
+          <td>{{myIndex+1}}</td><td>{{vuelo.numeroDeVuelo }}</td>
+          <td>{{vuelo.fecha | date:'shortDate'}}</td><td>{{vuelo.horario }}</td>
+          <td>{{vuelo.origen}}</td> <td>{{vuelo.destino}}</td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>

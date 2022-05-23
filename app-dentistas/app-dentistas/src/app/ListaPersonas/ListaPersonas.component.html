@@ -1,0 +1,23 @@
+<div>
+  <table>
+    <thead>
+      <th>Index</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Saldo</th>
+      <th>Ciudad</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas | sort:'nombre': 'asc', index as myIndex; trackBy: trackByPeople">
+        <td> <a  [routerLink]="['detallePersonas',persona.id]">{{myIndex+1}}</a></td><td>{{persona.nombre | uppercase}}</td>
+        <td>{{persona.apellido | slice:0:3}}</td><td>{{persona.saldo | currency:'EUR'}}</td>
+        <td>{{persona.ciudad}}</td>
+      </tr>
+    </tbody>
+    </table>
+
+    Dato: <input type="text" [(ngModel)]="dato" />
+    {{dato}}
+</div>
+
+

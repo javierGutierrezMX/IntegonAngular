@@ -1,0 +1,18 @@
+<div class="counterDiv" >
+  <div>
+    <!-- <p style=" font-size: larger;">{{result}}</p> -->
+    <label>Num1 : <input type="number"    #num_1 /></label>
+    <label>Num2  : <input type="number"   #num_2 /></label>
+    <label>Operacion  :
+      <select name="" #operacion>
+        <option value="+">Suma</option>
+        <option value="-">Resta</option>
+        <option value="*">Multiplicacion</option>
+        <option value="/">Division</option>
+      </select>
+    </label>
+    <input type="button"  value="Obtener resultado" class="btn btn-success" (click)="setResult(num_1.value, num_2.value, operacion.value)"/>
+    <!--  PAra llamarlo con el output<app-matematico  (btnoperacion)="getresult($event)"></app-matematico> -->
+    <p>El resultado obtenido de matematico es : <b>{{getMatematico()}}</b></p>
+  </div>
+</div>
